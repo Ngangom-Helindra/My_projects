@@ -1,0 +1,169 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyO1/A9sV1VoF9MSQo3IyXb4",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Ngangom-Helindra/My_projects/blob/main/glow_button%20exercise(HTML)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kQp_s76Bg1ol",
+        "outputId": "9acecf7f-fea3-419e-b1d0-9c55b6402fd2"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Mounted at /content/drive\n"
+          ]
+        }
+      ],
+      "source": [
+        "from google.colab import drive\n",
+        "drive.mount('/content/drive')\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from IPython.core.display import display, HTML\n",
+        "\n",
+        "# Change the path to where your file is located\n",
+        "file_path = \"/content/drive/My Drive/glow_button.html\"\n",
+        "\n",
+        "# Display the HTML file\n",
+        "display(HTML(file_path))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 263
+        },
+        "id": "GN_ai4HAhBmR",
+        "outputId": "ea37367c-0536-4190-f9d5-62e280e51c72"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.core.display.HTML object>"
+            ],
+            "text/html": [
+              "<!DOCTYPE html>\n",
+              "<html len=\"en\">\n",
+              "<head>\n",
+              "<style>\n",
+              "\n",
+              "body{\n",
+              "display:flex;\n",
+              "justify-content:center;\n",
+              "background-color: #161616;\n",
+              "overflow:hidden;\n",
+              "}\n",
+              "\n",
+              ".btn{\n",
+              "margin:100px;\n",
+              "padding:15px 40px;\n",
+              "border:none;\n",
+              "outline:none;\n",
+              "color:#FFF;\n",
+              "cursor:pointer;\n",
+              "position:relative;\n",
+              "z-index:0;\n",
+              "border-radius:15px;\n",
+              "}\n",
+              ".btn::after \n",
+              "{\n",
+              "  content: \"\";\n",
+              "  z-index: -1;\n",
+              "  position: absolute;\n",
+              "  width: 100%;\n",
+              "  height: 100%;\n",
+              "  background-color: #333;\n",
+              "  left: 0;\n",
+              "  top: 0;\n",
+              "  border-radius: 10px;\n",
+              "}\n",
+              "/* glow */\n",
+              ".btn::before {\n",
+              "  content: \"\";\n",
+              "  background: linear-gradient(\n",
+              "    45deg,\n",
+              "    #FF0000, #FF7300, #FFFB00, #48FF00,\n",
+              "    #00FFD5, #002BFF, #FF00C8, #FF0000\n",
+              "  );\n",
+              "  position: absolute;\n",
+              "  top: -2px;\n",
+              "  left: -2px;\n",
+              "  background-size: 600%;\n",
+              "  z-index: -1;\n",
+              "  width: calc(100% + 4px);\n",
+              "  height:  calc(100% + 4px);\n",
+              "  filter: blur(8px);\n",
+              "  animation: glowing 20s linear infinite;\n",
+              "  transition: opacity .3s ease-in-out;\n",
+              "  border-radius: 10px;\n",
+              "  opacity: 0;\n",
+              "}\n",
+              "\n",
+              "@keyframes glowing {\n",
+              "  0% {background-position: 0 0;}\n",
+              "  50% {background-position: 400% 0;}\n",
+              "  100% {background-position: 0 0;}\n",
+              "}\n",
+              "\n",
+              "/* hover */\n",
+              ".btn:hover::before {\n",
+              "  opacity: 1;\n",
+              "}\n",
+              "\n",
+              ".btn:active:after {\n",
+              "  background: transparent;\n",
+              "}\n",
+              "\n",
+              ".btn:active {\n",
+              "  color: #000;\n",
+              "  font-weight: bold;\n",
+              "}\n",
+              "</style>\n",
+              "<body>\n",
+              "<button class=\"btn\">NgH</button>\n",
+              "</body>\n",
+              "</html>\n"
+            ]
+          },
+          "metadata": {}
+        }
+      ]
+    }
+  ]
+}
